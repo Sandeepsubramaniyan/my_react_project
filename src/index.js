@@ -2,9 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-
-
-
 class Square extends React.Component {
     render() { 
       return (
@@ -25,6 +22,12 @@ class Square extends React.Component {
         squares: Array(9).fill(null),
       };
     }
+
+    handleClick(i) {
+      const squares = this.state.squares.slice();
+      squares[i] = 'X';
+      this.setState({squares: squares});
+    }
     
     renderSquare(i) {
       return (
@@ -34,7 +37,6 @@ class Square extends React.Component {
         />
       );
     }
-  
   
     render() 
     {
